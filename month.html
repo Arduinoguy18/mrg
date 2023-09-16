@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy 40th Monthsary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    h1 {
+      margin-top: 50px;
+    }
+    
+    .question {
+      margin-top: 30px;
+    }
+    
+    .answer {
+      margin-top: 10px;
+    }
+    
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .result {
+      margin-top: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi!,Happy 40th Monthsary!!! </h1>
+  <h2>To claim your suprise answer the question below</h2>
+  
+  <div class="question">
+    <p>What song that we enjoy together when we are in grade 12?</p>
+  </div>
+  
+  <div class="answer">
+    <input type="radio" name="capital" value="still"> Shania Twain - You're Still The One<br>
+    <input type="radio" name="capital" value="uhaw"> Uhaw - Dilaw<br>
+    <input type="radio" name="capital" value="flowers"> Ed Sheeran - Supermarket Flowers<br>
+  </div>
+  
+  <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+  
+  <div id="result" class="result"></div>
+  
+  <script>
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="capital"]:checked');
+      var resultDiv = document.getElementById("result");
+      
+      if (selectedAnswer && selectedAnswer.value === "still") {
+        resultDiv.innerHTML = "Congratulations! You answered correctly. Enjoy the song!";
+        playMusic();
+      } else {
+        resultDiv.innerHTML = "Sorry, your answer is incorrect. The website will now close.";
+        setTimeout(function() {
+          window.close();
+        }, 3000);
+      }
+    }
+    
+    function playMusic() {
+      var musicVideoId = "VIDEO_ID"; // Replace VIDEO_ID with the actual YouTube video ID
+      var musicVideoUrl = "https://www.youtube.com/watch?v=_QWZQh0YYWA" + musicVideoId;
+      window.open(musicVideoUrl);
+    }
+  </script>
+</body>
+</html>
